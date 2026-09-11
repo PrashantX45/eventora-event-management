@@ -1,0 +1,6 @@
+{
+  "name": "Eventora",
+  "description": "Eventora is a contemporary event discovery, management, and registration website with authentic Indian artistic details, real-world events, and local storage registration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

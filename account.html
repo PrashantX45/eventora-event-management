@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Account — Eventora</title>
+  <meta name="description" content="Manage your Eventora profile, review your experiences, and access your account settings." />
+  <meta property="og:title" content="Your Account — Eventora" />
+  <meta property="og:description" content="Manage your Eventora profile, review your experiences, and access your account settings." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg-[#FAF9F6] text-[#202020] min-h-screen flex flex-col antialiased selection:bg-[#F8DED2] selection:text-[#B85D3B]">
+
+  <!-- Upper Right Large Partial Rangoli Art with organic fading edges -->
+  <div class="absolute top-0 right-0 w-[720px] h-[720px] pointer-events-none z-0 overflow-hidden select-none opacity-40" aria-hidden="true">
+    <svg class="rangoli-drift w-[820px] h-[820px] absolute -top-24 -right-24" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="400" cy="400" r="380" stroke="#E8E5DF" stroke-width="1.2" stroke-dasharray="4 6" opacity="0.6"/>
+      <circle cx="400" cy="400" r="320" stroke="#E9E2F8" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="400" cy="400" r="260" stroke="#F8DED2" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="400" cy="400" r="200" stroke="#DCE9DF" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.7"/>
+      <g stroke="#D85A38" stroke-width="1.2" opacity="0.65">
+        <path d="M400 40 C450 160 520 220 400 400 C280 220 350 160 400 40Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M400 760 C450 640 520 580 400 400 C280 580 350 640 400 760Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M40 400 C160 450 220 520 400 400 C220 280 160 350 40 400Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M760 400 C640 450 580 520 400 400 C580 280 640 350 760 400Z" fill="#F8DED2" fill-opacity="0.18"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E8E5DF] transition-all">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 group text-[#202020] font-bold text-xl tracking-tight">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D85A38] transition-transform group-hover:scale-125"></span>
+        <span class="tracking-tight text-xl font-extrabold text-[#202020]">eventora</span>
+      </a>
+
+      <!-- Center Navigation -->
+      <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-[#6F6D68]">
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Explore</a>
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Categories</a>
+        <a href="events.html#about" class="hover:text-[#202020] transition-colors">About</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div id="navbarUserArea" class="flex items-center space-x-5 text-[14px]">
+        <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 max-w-3xl w-full mx-auto px-6 md:px-8 pt-10 pb-28 relative z-10">
+
+    <!-- Page Title -->
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-[#202020] tracking-tight mb-2">
+        Your account
+      </h1>
+      <p class="text-sm sm:text-base text-[#6F6D68]">
+        Manage your profile details and access your experiences.
+      </p>
+    </div>
+
+    <!-- Account Details Card -->
+    <div class="bg-white rounded-3xl border border-[#E8E5DF] p-6 sm:p-8 shadow-xs mb-8">
+      
+      <!-- User Header Row -->
+      <div class="flex items-center gap-4 pb-6 border-b border-[#F0EEE8]">
+        <div id="userAvatar" class="w-14 h-14 rounded-full bg-[#E9E2F8] text-[#795DA8] text-xl font-extrabold flex items-center justify-center flex-shrink-0">
+          U
+        </div>
+        <div class="flex-1 min-w-0">
+          <h2 id="userNameDisplay" class="text-xl font-bold text-[#202020] truncate">Loading...</h2>
+          <p id="userEmailDisplay" class="text-sm text-[#6F6D68] truncate">loading@example.com</p>
+        </div>
+        <div class="hidden sm:block">
+          <span id="userIdBadge" class="text-[11px] font-mono font-semibold px-2.5 py-1 rounded bg-[#FAF9F6] border border-[#E8E5DF] text-[#6F6D68]">
+            USR-000000
+          </span>
+        </div>
+      </div>
+
+      <!-- Information & Name Edit -->
+      <div class="pt-6 space-y-6">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#6F6D68] mb-1.5">
+            Email address
+          </label>
+          <div class="flex items-center justify-between p-3.5 rounded-2xl bg-[#FAF9F6] border border-[#E8E5DF]">
+            <span id="userEmailValue" class="text-sm text-[#202020] font-medium select-all">name@example.com</span>
+            <span class="text-[11px] font-medium text-[#6F6D68] bg-white px-2 py-0.5 rounded border border-[#E8E5DF]">
+              Cannot be changed
+            </span>
+          </div>
+          <p class="text-[11px] text-[#6F6D68] mt-1.5">Your email address is your unique account identifier.</p>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="nameInput" class="block text-xs font-bold uppercase tracking-wider text-[#6F6D68]">
+              Full name
+            </label>
+            <button 
+              type="button" 
+              id="editNameToggle" 
+              class="text-xs font-bold text-[#202020] hover:text-[#D85A38] transition-colors cursor-pointer"
+            >
+              Edit name
+            </button>
+          </div>
+
+          <!-- View Mode -->
+          <div id="nameViewBox" class="p-3.5 rounded-2xl bg-[#FAF9F6] border border-[#E8E5DF]">
+            <span id="nameValueText" class="text-sm text-[#202020] font-semibold">User Name</span>
+          </div>
+
+          <!-- Edit Mode (Hidden initially) -->
+          <form id="nameEditForm" class="hidden space-y-3 mt-2">
+            <input 
+              type="text" 
+              id="nameInput" 
+              class="w-full px-4 py-3 rounded-xl border border-[#202020] bg-white text-[#202020] text-sm focus:outline-none transition-all"
+              required
+            />
+            <div class="flex items-center gap-3">
+              <button 
+                type="submit" 
+                class="px-5 py-2 rounded-full bg-[#202020] text-white text-xs font-bold hover:bg-black transition-colors cursor-pointer"
+              >
+                Save changes
+              </button>
+              <button 
+                type="button" 
+                id="cancelNameEdit" 
+                class="px-4 py-2 rounded-full bg-[#FAF9F6] border border-[#E8E5DF] text-[#6F6D68] hover:text-[#202020] text-xs font-semibold transition-colors cursor-pointer"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experiences & Actions Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <a 
+        href="my-events.html?tab=upcoming" 
+        class="bg-white rounded-3xl border border-[#E8E5DF] p-6 hover:border-[#202020] hover:shadow-xs transition-all flex items-start justify-between group"
+      >
+        <div>
+          <div class="w-10 h-10 rounded-2xl bg-[#FAF9F6] border border-[#E8E5DF] flex items-center justify-center text-[#202020] mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-base text-[#202020] group-hover:text-[#D85A38] transition-colors mb-1">
+            My Events
+          </h3>
+          <p class="text-xs text-[#6F6D68]">View your registered passes and admission tickets</p>
+        </div>
+        <span class="text-[#6F6D68] group-hover:text-[#202020] font-bold text-sm">→</span>
+      </a>
+
+      <a 
+        href="my-events.html?tab=saved" 
+        class="bg-white rounded-3xl border border-[#E8E5DF] p-6 hover:border-[#202020] hover:shadow-xs transition-all flex items-start justify-between group"
+      >
+        <div>
+          <div class="w-10 h-10 rounded-2xl bg-[#FAF9F6] border border-[#E8E5DF] flex items-center justify-center text-[#202020] mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-base text-[#202020] group-hover:text-[#D85A38] transition-colors mb-1">
+            Saved Events
+          </h3>
+          <p class="text-xs text-[#6F6D68]">Browse bookmarked conferences, workshops, and panels</p>
+        </div>
+        <span class="text-[#6F6D68] group-hover:text-[#202020] font-bold text-sm">→</span>
+      </a>
+    </div>
+
+    <!-- Sign Out Row -->
+    <div class="bg-white rounded-3xl border border-[#E8E5DF] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div>
+        <h4 class="font-bold text-sm text-[#202020]">Session management</h4>
+        <p class="text-xs text-[#6F6D68]">Sign out of this device. Your registrations and saved events will remain safely in storage.</p>
+      </div>
+      <button 
+        type="button" 
+        id="signOutAccountBtn" 
+        class="px-6 py-2.5 rounded-full border border-rose-200 bg-rose-50 text-rose-700 text-sm font-bold hover:bg-rose-100 transition-colors cursor-pointer flex items-center gap-2 flex-shrink-0"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+        </svg>
+        <span>Sign Out</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-[#E8E5DF] mt-auto">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6F6D68]">
+        <div>© 2026 Eventora Inc. All rights reserved. Contemporary Indian cultural platform.</div>
+        <div class="flex items-center gap-6">
+          <a href="events.html" class="hover:text-[#202020]">Explore Events</a>
+          <a href="events.html#about" class="hover:text-[#202020]">About</a>
+          <a href="my-events.html" class="hover:text-[#202020]">My Experiences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Module -->
+  <script type="module">
+    import { requireAuth, updateUserName, signOut, showToast } from './js/app.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = requireAuth('account');
+      if (!user) return; // redirected to signin.html?redirect=account
+
+      const avatar = document.getElementById('userAvatar');
+      const nameDisplay = document.getElementById('userNameDisplay');
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      const emailValue = document.getElementById('userEmailValue');
+      const nameValueText = document.getElementById('nameValueText');
+      const idBadge = document.getElementById('userIdBadge');
+      const editToggle = document.getElementById('editNameToggle');
+      const viewBox = document.getElementById('nameViewBox');
+      const editForm = document.getElementById('nameEditForm');
+      const nameInput = document.getElementById('nameInput');
+      const cancelEdit = document.getElementById('cancelNameEdit');
+      const signOutBtn = document.getElementById('signOutAccountBtn');
+
+      function updateUI(u) {
+        if (avatar) avatar.textContent = (u.name[0] || 'U').toUpperCase();
+        if (nameDisplay) nameDisplay.textContent = u.name;
+        if (emailDisplay) emailDisplay.textContent = u.email;
+        if (emailValue) emailValue.textContent = u.email;
+        if (nameValueText) nameValueText.textContent = u.name;
+        if (nameInput) nameInput.value = u.name;
+        if (idBadge) idBadge.textContent = u.id || 'USR-LOCAL';
+      }
+
+      updateUI(user);
+
+      if (editToggle) {
+        editToggle.addEventListener('click', () => {
+          viewBox.classList.add('hidden');
+          editForm.classList.remove('hidden');
+          nameInput.focus();
+        });
+      }
+
+      if (cancelEdit) {
+        cancelEdit.addEventListener('click', () => {
+          editForm.classList.add('hidden');
+          viewBox.classList.remove('hidden');
+          nameInput.value = user.name;
+        });
+      }
+
+      if (editForm) {
+        editForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const newName = nameInput.value.trim();
+          if (!newName) return;
+
+          const res = updateUserName(newName);
+          if (res.success) {
+            updateUI(res.user);
+            editForm.classList.add('hidden');
+            viewBox.classList.remove('hidden');
+            showToast('Account name updated successfully');
+          } else {
+            showToast(res.error || 'Failed to update name', 'error');
+          }
+        });
+      }
+
+      if (signOutBtn) {
+        signOutBtn.addEventListener('click', () => {
+          signOut();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

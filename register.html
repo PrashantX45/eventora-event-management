@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve Your Place — Eventora</title>
+  <meta name="description" content="Complete your registration details to secure admission on Eventora." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-[#FAF9F6] text-[#202020] selection:bg-[#E9E2F8] selection:text-[#202020]">
+
+  <!-- Cultural background accent -->
+  <div class="absolute top-0 right-0 w-[450px] h-[450px] pointer-events-none z-0 overflow-hidden select-none opacity-25" aria-hidden="true">
+    <svg class="rangoli-drift w-full h-full" viewBox="0 0 500 500" fill="none">
+      <circle cx="380" cy="120" r="260" stroke="#F8DED2" stroke-width="1.5" stroke-dasharray="4 6"></circle>
+      <circle cx="380" cy="120" r="190" stroke="#E9E2F8" stroke-width="2"></circle>
+      <circle cx="380" cy="120" r="120" stroke="#DCE9DF" stroke-width="1.5"></circle>
+      <circle cx="380" cy="120" r="50" stroke="#F4E8B8" stroke-width="2"></circle>
+    </svg>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E8E5DF]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2.5 group text-[#202020] font-bold text-xl tracking-tight">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D85A38] transition-transform group-hover:scale-125"></span>
+        <span class="tracking-tight text-xl font-extrabold text-[#202020]">eventora</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-[#6F6D68]">
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Explore</a>
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Categories</a>
+        <a href="events.html#about" class="hover:text-[#202020] transition-colors">About</a>
+      </nav>
+
+      <div id="navbarUserArea" class="flex items-center space-x-5 text-[14px]">
+        <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 md:px-8 pt-6 pb-28 relative z-10">
+
+    <!-- BACK TO EVENT LINK -->
+    <div class="mb-6">
+      <a id="backLink" href="event.html" class="text-xs font-bold text-[#6F6D68] hover:text-[#202020] transition-colors inline-flex items-center gap-1">
+        ← Back to Event Details
+      </a>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-[#202020] tracking-tight mb-2">
+        Reserve your place.
+      </h1>
+      <p class="text-sm sm:text-base text-[#6F6D68]">
+        Complete your registration details to secure admission. Instant digital pass issuance.
+      </p>
+    </div>
+
+    <form id="registrationForm" novalidate>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- LEFT COLUMN: FORM DETAILS (7 cols) -->
+        <div class="lg:col-span-7 space-y-8">
+
+          <!-- Selected Event Card -->
+          <div class="bg-white rounded-3xl border border-[#E8E5DF] p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <img id="regEventImage" src="" alt="Event thumbnail" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-neutral-100" />
+            <div class="flex-1">
+              <span id="regCategoryBadge" class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded inline-block mb-1.5">
+                Technology
+              </span>
+              <h3 id="regEventTitle" class="text-lg sm:text-xl font-bold text-[#202020] mb-1 leading-snug">
+                Future Tech Summit 2026
+              </h3>
+              <p id="regEventDate" class="text-xs sm:text-sm text-[#6F6D68] mb-1">
+                Friday, Sep 25, 2026 • 9:00 AM
+              </p>
+              <p id="regEventVenue" class="text-xs text-[#999791]">
+                Jio World Centre, BKC, Mumbai
+              </p>
+            </div>
+          </div>
+
+          <!-- Pass Selection Options -->
+          <div class="bg-white rounded-3xl border border-[#E8E5DF] p-6 sm:p-8 shadow-xs">
+            <h2 class="text-lg font-bold text-[#202020] mb-4">Pass Tier</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="border-2 border-[#202020] bg-[#FAF9F6] p-4 rounded-2xl cursor-pointer flex items-start gap-3 transition-all">
+                <input type="radio" name="registrationTier" value="standard" checked class="mt-1 accent-[#202020]" />
+                <div>
+                  <span class="font-bold text-sm text-[#202020] block">Standard Pass</span>
+                  <span class="text-xs text-[#6F6D68] block mt-0.5">All keynotes, systems workshops &amp; networking lunch</span>
+                </div>
+              </label>
+
+              <label class="border border-[#E8E5DF] bg-white p-4 rounded-2xl cursor-pointer flex items-start gap-3 hover:border-[#6F6D68] transition-all">
+                <input type="radio" name="registrationTier" value="vip" class="mt-1 accent-[#202020]" />
+                <div>
+                  <span class="font-bold text-sm text-[#202020] block">VIP Access</span>
+                  <span class="text-xs text-[#6F6D68] block mt-0.5">Front row seating, speakers dinner invitation &amp; lounge</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Attendee Information -->
+          <div class="bg-white rounded-3xl border border-[#E8E5DF] p-6 sm:p-8 shadow-xs space-y-5">
+            <h2 class="text-lg font-bold text-[#202020] mb-1">Attendee Information</h2>
+            <p class="text-xs text-[#6F6D68] mb-5">Your admission ticket will be issued under this legal name.</p>
+
+            <!-- Full Name -->
+            <div>
+              <label for="fullName" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                Full Name <span class="text-[#D85A38]">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                required
+                placeholder="e.g. Aryan Sharma" 
+                class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+              />
+              <span id="fullNameError" class="error-msg hidden text-xs text-rose-600 font-semibold mt-1 block"></span>
+            </div>
+
+            <!-- Email & Phone Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="emailAddress" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                  Email Address <span class="text-[#D85A38]">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="emailAddress" 
+                  required
+                  placeholder="name@example.com" 
+                  class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+                />
+                <span id="emailError" class="error-msg hidden text-xs text-rose-600 font-semibold mt-1 block"></span>
+              </div>
+
+              <div>
+                <label for="phoneNumber" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                  Phone Number <span class="text-[#D85A38]">*</span>
+                </label>
+                <div class="flex">
+                  <span class="inline-flex items-center px-3.5 rounded-l-xl border border-r-0 border-[#E8E5DF] bg-[#F4F3F0] text-[#6F6D68] text-sm font-semibold">
+                    +91
+                  </span>
+                  <input 
+                    type="tel" 
+                    id="phoneNumber" 
+                    required
+                    placeholder="9876543210" 
+                    maxlength="10"
+                    class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-r-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+                  />
+                </div>
+                <span id="phoneError" class="error-msg hidden text-xs text-rose-600 font-semibold mt-1 block"></span>
+              </div>
+            </div>
+
+            <!-- College & City Grid (Optional) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="collegeOrg" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                  College / Organization <span class="text-[#999791] font-normal lowercase">(optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="collegeOrg" 
+                  placeholder="e.g. IIT Bombay or Studio Ltd" 
+                  class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="userCity" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                  City <span class="text-[#999791] font-normal lowercase">(optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="userCity" 
+                  placeholder="e.g. Mumbai" 
+                  class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Ticket Quantity Stepper -->
+            <div class="pt-4 border-t border-[#F0EEE8] flex items-center justify-between">
+              <div>
+                <span class="block text-sm font-bold text-[#202020]">Number of Tickets</span>
+                <span class="text-xs text-[#6F6D68]">Maximum 5 passes per order</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <button 
+                  type="button" 
+                  id="minusTicketBtn" 
+                  class="w-9 h-9 rounded-xl border border-[#E8E5DF] bg-white flex items-center justify-center font-bold text-lg hover:border-[#202020] transition-colors select-none"
+                >
+                  −
+                </button>
+                <span id="ticketCountDisplay" class="font-extrabold text-base w-6 text-center text-[#202020]">1</span>
+                <button 
+                  type="button" 
+                  id="plusTicketBtn" 
+                  class="w-9 h-9 rounded-xl border border-[#E8E5DF] bg-white flex items-center justify-center font-bold text-lg hover:border-[#202020] transition-colors select-none"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <!-- Special Requirements -->
+            <div class="pt-4 border-t border-[#F0EEE8]">
+              <label for="specialRequirements" class="block text-xs font-bold text-[#202020] uppercase tracking-wider mb-2">
+                Special requirements <span class="text-[#999791] font-normal lowercase">(dietary, wheelchair accessibility, etc.)</span>
+              </label>
+              <textarea 
+                id="specialRequirements" 
+                rows="2" 
+                placeholder="Let us know if you require specific accommodations..."
+                class="input-field w-full px-4 py-3 bg-[#FAF9F6] rounded-xl text-sm text-[#202020] border border-[#E8E5DF] focus:outline-none focus:border-[#202020] transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Terms agreement checkbox -->
+            <div class="pt-2">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input 
+                  type="checkbox" 
+                  id="termsAgreed" 
+                  class="mt-1 accent-[#202020] w-4 h-4 rounded cursor-pointer"
+                />
+                <span class="text-xs text-[#6F6D68] leading-relaxed">
+                  I agree to the Eventora admission terms, health guidelines, and attendee code of conduct.
+                </span>
+              </label>
+              <span id="termsError" class="error-msg hidden text-xs text-rose-600 font-semibold mt-1 block">
+                Please accept the terms to proceed.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: STICKY ORDER SUMMARY (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="sticky top-28 space-y-6">
+
+            <div class="bg-white rounded-3xl border border-[#E8E5DF] p-6 sm:p-7 shadow-xs">
+              <h2 class="text-lg font-bold text-[#202020] mb-4">Your registration</h2>
+
+              <div class="pb-4 mb-4 border-b border-[#E8E5DF]">
+                <h3 id="summaryEventTitle" class="font-bold text-[#202020] text-base mb-1">Future Tech Summit 2026</h3>
+                <p id="summaryEventDate" class="text-xs text-[#6F6D68]">Friday, Sep 25, 2026</p>
+                <p id="summaryEventVenue" class="text-xs text-[#999791]">Jio World Centre, BKC, Mumbai</p>
+                <div class="mt-2">
+                  <span id="summaryTierBadge" class="text-[11px] font-bold px-2 py-0.5 rounded bg-[#FAF9F6] border border-[#E8E5DF] text-[#6F6D68]">
+                    Standard Admission Pass
+                  </span>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="space-y-3 text-sm pb-5 mb-5 border-b border-[#E8E5DF]">
+                <div class="flex items-center justify-between text-[#6F6D68]">
+                  <span>Tickets (<span id="summaryTicketCount">1 × ₹499</span>)</span>
+                  <span id="summaryTicketsSubtotal" class="font-semibold text-[#202020]">₹499</span>
+                </div>
+                <div class="flex items-center justify-between text-[#6F6D68]">
+                  <span>Booking Fee &amp; Taxes</span>
+                  <span class="text-emerald-700 font-semibold">Waived (₹0)</span>
+                </div>
+              </div>
+
+              <!-- Total -->
+              <div class="flex items-baseline justify-between mb-6">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-[#6F6D68] block">Total Amount</span>
+                  <span class="text-[11px] text-[#999791]">All inclusive</span>
+                </div>
+                <span id="summaryTotalPrice" class="text-3xl font-extrabold text-[#202020]">₹499</span>
+              </div>
+
+              <!-- Submit button -->
+              <button 
+                type="submit" 
+                id="submitRegBtn"
+                class="w-full py-4 bg-[#202020] text-white rounded-2xl font-bold text-base hover:bg-black transition-all shadow-sm flex items-center justify-center"
+              >
+                Complete registration
+              </button>
+
+              <!-- Safe badge -->
+              <div class="mt-6 pt-5 border-t border-[#F0EEE8] space-y-2 text-xs text-[#6F6D68]">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[#4D7C5D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Instant digital pass generation</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[#4D7C5D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Saved locally to My Events dashboard</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-auto border-t border-[#E8E5DF] bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-[#E8E5DF]">
+        <div class="md:col-span-2 space-y-3">
+          <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-[#202020]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#D85A38]"></span>
+            <span>eventora</span>
+          </a>
+          <p class="text-sm text-[#6F6D68] max-w-sm leading-relaxed">
+            Find and celebrate thoughtful cultural events, workshops, and gatherings happening around you.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Discover</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Featured Experiences</a></li>
+            <li><a href="events.html?cat=Design" class="hover:text-[#202020] transition-colors">Art &amp; Design Labs</a></li>
+            <li><a href="events.html?cat=Music" class="hover:text-[#202020] transition-colors">Music &amp; Acoustic</a></li>
+            <li><a href="events.html?cat=Workshops" class="hover:text-[#202020] transition-colors">Creative Workshops</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Platform</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Browse Categories</a></li>
+            <li><a href="my-events.html?tab=saved" class="hover:text-[#202020] transition-colors">My Saved Events</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Host an Event</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">About</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Our Philosophy</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Press &amp; Stories</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Contact Concierge</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6F6D68]">
+        <div>© 2026 Eventora Inc. All rights reserved. Built with contemporary Indian craft.</div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-[#202020]">Twitter (X)</a>
+          <a href="#" class="hover:text-[#202020]">Instagram</a>
+          <a href="#" class="hover:text-[#202020]">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="./js/register.js"></script>
+
+</body>
+</html>

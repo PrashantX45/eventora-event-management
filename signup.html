@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Eventora</title>
+  <meta name="description" content="Create your Eventora account to book tickets, manage events, and save cultural experiences." />
+  <meta property="og:title" content="Create Account — Eventora" />
+  <meta property="og:description" content="Create your Eventora account to book tickets, manage events, and save cultural experiences." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg-[#FAF9F6] text-[#202020] min-h-screen flex flex-col antialiased selection:bg-[#F8DED2] selection:text-[#B85D3B]">
+
+  <!-- Upper Right Large Partial Rangoli Art with organic fading edges -->
+  <div class="absolute top-0 right-0 w-[720px] h-[720px] pointer-events-none z-0 overflow-hidden select-none opacity-40" aria-hidden="true">
+    <svg class="rangoli-drift w-[820px] h-[820px] absolute -top-24 -right-24" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="400" cy="400" r="380" stroke="#E8E5DF" stroke-width="1.2" stroke-dasharray="4 6" opacity="0.6"/>
+      <circle cx="400" cy="400" r="320" stroke="#E9E2F8" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="400" cy="400" r="260" stroke="#F8DED2" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="400" cy="400" r="200" stroke="#DCE9DF" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.7"/>
+      <g stroke="#D85A38" stroke-width="1.2" opacity="0.65">
+        <path d="M400 40 C450 160 520 220 400 400 C280 220 350 160 400 40Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M400 760 C450 640 520 580 400 400 C280 580 350 640 400 760Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M40 400 C160 450 220 520 400 400 C220 280 160 350 40 400Z" fill="#F8DED2" fill-opacity="0.18"/>
+        <path d="M760 400 C640 450 580 520 400 400 C580 280 640 350 760 400Z" fill="#F8DED2" fill-opacity="0.18"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E8E5DF] transition-all">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 group text-[#202020] font-bold text-xl tracking-tight">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D85A38] transition-transform group-hover:scale-125"></span>
+        <span class="tracking-tight text-xl font-extrabold text-[#202020]">eventora</span>
+      </a>
+
+      <!-- Center Navigation -->
+      <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-[#6F6D68]">
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Explore</a>
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Categories</a>
+        <a href="events.html#about" class="hover:text-[#202020] transition-colors">About</a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div id="navbarUserArea" class="flex items-center space-x-5 text-[14px]">
+        <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 md:px-8 pt-10 pb-24 relative z-10 flex items-center justify-center">
+
+    <div class="w-full max-w-md">
+      <!-- Card Container -->
+      <div class="bg-white rounded-3xl border border-[#E8E5DF] p-8 sm:p-10 shadow-xs relative overflow-hidden">
+        
+        <!-- Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-extrabold text-[#202020] tracking-tight mb-2">
+            Create your Eventora account.
+          </h1>
+          <p class="text-sm sm:text-[15px] text-[#6F6D68]">
+            Join Eventora and keep all your experiences in one place.
+          </p>
+        </div>
+
+        <!-- Global Error Banner -->
+        <div id="signUpError" class="hidden mb-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-start gap-3 animate-in fade-in duration-200">
+          <svg class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+          <span id="signUpErrorText">An account with this email already exists. Try signing in instead.</span>
+        </div>
+
+        <!-- Form -->
+        <form id="signUpForm" novalidate class="space-y-4">
+          <!-- Full Name -->
+          <div>
+            <label for="name" class="block text-xs font-bold uppercase tracking-wider text-[#202020] mb-2">
+              Full name
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              autocomplete="name" 
+              placeholder="e.g. Prashant Kumar"
+              class="w-full px-4 py-3 rounded-xl border border-[#E8E5DF] bg-[#FAF9F6] text-[#202020] text-sm focus:outline-none focus:border-[#202020] focus:bg-white transition-all"
+            />
+            <p id="nameError" class="text-xs text-rose-500 mt-1.5 hidden font-medium"></p>
+          </div>
+
+          <!-- Email Address -->
+          <div>
+            <label for="email" class="block text-xs font-bold uppercase tracking-wider text-[#202020] mb-2">
+              Email address
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              autocomplete="email" 
+              placeholder="name@example.com"
+              class="w-full px-4 py-3 rounded-xl border border-[#E8E5DF] bg-[#FAF9F6] text-[#202020] text-sm focus:outline-none focus:border-[#202020] focus:bg-white transition-all"
+            />
+            <p id="emailError" class="text-xs text-rose-500 mt-1.5 hidden font-medium"></p>
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block text-xs font-bold uppercase tracking-wider text-[#202020] mb-2">
+              Password
+            </label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password"
+              autocomplete="new-password" 
+              placeholder="Minimum 8 characters"
+              class="w-full px-4 py-3 rounded-xl border border-[#E8E5DF] bg-[#FAF9F6] text-[#202020] text-sm focus:outline-none focus:border-[#202020] focus:bg-white transition-all"
+            />
+            <p id="passwordError" class="text-xs text-rose-500 mt-1.5 hidden font-medium"></p>
+          </div>
+
+          <!-- Confirm Password -->
+          <div>
+            <label for="confirmPassword" class="block text-xs font-bold uppercase tracking-wider text-[#202020] mb-2">
+              Confirm password
+            </label>
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              name="confirmPassword"
+              autocomplete="new-password" 
+              placeholder="Re-enter your password"
+              class="w-full px-4 py-3 rounded-xl border border-[#E8E5DF] bg-[#FAF9F6] text-[#202020] text-sm focus:outline-none focus:border-[#202020] focus:bg-white transition-all"
+            />
+            <p id="confirmPasswordError" class="text-xs text-rose-500 mt-1.5 hidden font-medium"></p>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="pt-2">
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input 
+                type="checkbox" 
+                id="terms" 
+                name="terms" 
+                class="mt-1 w-4 h-4 rounded border-[#E8E5DF] text-[#202020] focus:ring-[#202020] cursor-pointer accent-[#202020]"
+              />
+              <span class="text-xs text-[#6F6D68] leading-relaxed">
+                I agree to the <a href="events.html#about" class="text-[#202020] underline font-medium hover:text-[#D85A38]">Terms &amp; Conditions</a> and understand this is an internship demo platform.
+              </span>
+            </label>
+            <p id="termsError" class="text-xs text-rose-500 mt-1.5 hidden font-medium"></p>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            id="submitBtn" 
+            class="w-full mt-4 bg-[#202020] text-white py-3.5 rounded-full font-bold text-sm hover:bg-black transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Create account</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Link to Sign In -->
+      <div class="mt-6 text-center text-sm text-[#6F6D68]">
+        Already have an account? 
+        <a id="signInLink" href="signin.html" class="font-bold text-[#202020] hover:text-[#D85A38] transition-colors underline">
+          Sign in
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white border-t border-[#E8E5DF] mt-auto">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6F6D68]">
+        <div>© 2026 Eventora Inc. All rights reserved. Contemporary Indian cultural platform.</div>
+        <div class="flex items-center gap-6">
+          <a href="events.html" class="hover:text-[#202020]">Explore Events</a>
+          <a href="events.html#about" class="hover:text-[#202020]">About</a>
+          <a href="my-events.html" class="hover:text-[#202020]">My Experiences</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Module -->
+  <script type="module">
+    import { signUp, getCurrentUser, showToast, initNavbar } from './js/app.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if user is already signed in
+      const existingUser = getCurrentUser();
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get('redirect');
+      const eventId = params.get('id');
+      const tier = params.get('tier');
+
+      if (existingUser) {
+        handleRedirect(redirect, eventId, tier);
+        return;
+      }
+
+      // Preserve query params for Sign In link
+      const signInLink = document.getElementById('signInLink');
+      if (signInLink && window.location.search) {
+        signInLink.href = `signin.html${window.location.search}`;
+      }
+
+      const form = document.getElementById('signUpForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const termsInput = document.getElementById('terms');
+
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const confirmPasswordError = document.getElementById('confirmPasswordError');
+      const termsError = document.getElementById('termsError');
+      const signUpError = document.getElementById('signUpError');
+      const signUpErrorText = document.getElementById('signUpErrorText');
+
+      function clearErrors() {
+        signUpError.classList.add('hidden');
+        nameError.classList.add('hidden');
+        emailError.classList.add('hidden');
+        passwordError.classList.add('hidden');
+        confirmPasswordError.classList.add('hidden');
+        termsError.classList.add('hidden');
+
+        nameInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+        emailInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+        passwordInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+        confirmPasswordInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+      }
+
+      nameInput.addEventListener('input', () => {
+        nameError.classList.add('hidden');
+        nameInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+      });
+
+      emailInput.addEventListener('input', () => {
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+      });
+
+      passwordInput.addEventListener('input', () => {
+        passwordError.classList.add('hidden');
+        passwordInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+      });
+
+      confirmPasswordInput.addEventListener('input', () => {
+        confirmPasswordError.classList.add('hidden');
+        confirmPasswordInput.classList.remove('border-rose-500', 'bg-rose-50/20');
+      });
+
+      termsInput.addEventListener('change', () => {
+        termsError.classList.add('hidden');
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+        const termsAccepted = termsInput.checked;
+
+        let hasError = false;
+
+        if (!name) {
+          nameError.textContent = 'Please enter your name.';
+          nameError.classList.remove('hidden');
+          nameInput.classList.add('border-rose-500', 'bg-rose-50/20');
+          hasError = true;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+          emailError.textContent = 'Enter a valid email address.';
+          emailError.classList.remove('hidden');
+          emailInput.classList.add('border-rose-500', 'bg-rose-50/20');
+          hasError = true;
+        }
+
+        if (!password || password.length < 8) {
+          passwordError.textContent = 'Password must be at least 8 characters.';
+          passwordError.classList.remove('hidden');
+          passwordInput.classList.add('border-rose-500', 'bg-rose-50/20');
+          hasError = true;
+        }
+
+        if (password !== confirmPassword) {
+          confirmPasswordError.textContent = 'Passwords do not match.';
+          confirmPasswordError.classList.remove('hidden');
+          confirmPasswordInput.classList.add('border-rose-500', 'bg-rose-50/20');
+          hasError = true;
+        }
+
+        if (!termsAccepted) {
+          termsError.textContent = 'Please accept the terms to continue.';
+          termsError.classList.remove('hidden');
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        const result = signUp({ name, email, password });
+        if (result.success) {
+          showToast(`Welcome to Eventora, ${result.user.name}`);
+          setTimeout(() => {
+            handleRedirect(redirect, eventId, tier);
+          }, 350);
+        } else {
+          signUpErrorText.textContent = result.error || 'An account with this email already exists. Try signing in instead.';
+          signUpError.classList.remove('hidden');
+        }
+      });
+
+      function handleRedirect(redir, id, t) {
+        if (redir === 'register' && id) {
+          let url = `register.html?id=${encodeURIComponent(id)}`;
+          if (t) url += `&tier=${encodeURIComponent(t)}`;
+          window.location.href = url;
+        } else if (redir === 'event' && id) {
+          window.location.href = `event.html?id=${encodeURIComponent(id)}`;
+        } else if (redir === 'my-events') {
+          window.location.href = 'my-events.html';
+        } else if (redir === 'account') {
+          window.location.href = 'account.html';
+        } else {
+          window.location.href = 'index.html';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

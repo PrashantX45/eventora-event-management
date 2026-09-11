@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Confirmed — Eventora</title>
+  <meta name="description" content="Your admission pass is confirmed on Eventora." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @media print {
+      header, footer, .no-print {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+      }
+      .ticket-container {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#FAF9F6] text-[#202020] selection:bg-[#E9E2F8] selection:text-[#202020]">
+
+  <!-- Cultural background accent -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none z-0 overflow-hidden select-none opacity-25" aria-hidden="true">
+    <svg class="rangoli-drift w-full h-full" viewBox="0 0 500 500" fill="none">
+      <circle cx="360" cy="140" r="260" stroke="#F8DED2" stroke-width="1.5" stroke-dasharray="4 6"></circle>
+      <circle cx="360" cy="140" r="190" stroke="#DCE9DF" stroke-width="2"></circle>
+      <circle cx="360" cy="140" r="120" stroke="#E9E2F8" stroke-width="1.5"></circle>
+      <circle cx="360" cy="140" r="60" stroke="#F4E8B8" stroke-width="2"></circle>
+    </svg>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E8E5DF]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2.5 group text-[#202020] font-bold text-xl tracking-tight">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D85A38] transition-transform group-hover:scale-125"></span>
+        <span class="tracking-tight text-xl font-extrabold text-[#202020]">eventora</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-[#6F6D68]">
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Explore</a>
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Categories</a>
+        <a href="events.html#about" class="hover:text-[#202020] transition-colors">About</a>
+      </nav>
+
+      <div id="navbarUserArea" class="flex items-center space-x-5 text-[14px]">
+        <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 max-w-3xl w-full mx-auto px-6 md:px-8 pt-10 pb-28 relative z-10">
+
+    <!-- CONFIRMATION HEADING SECTION -->
+    <div class="text-center mb-10">
+      <!-- Animated soft halo checkmark -->
+      <div class="w-16 h-16 rounded-full bg-[#DCE9DF] text-[#4D7C5D] mx-auto flex items-center justify-center mb-5 animate-confirm-icon shadow-sm">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-[#202020] tracking-tight mb-2">
+        You're going.
+      </h1>
+      <p class="text-sm sm:text-base text-[#6F6D68] max-w-md mx-auto leading-relaxed" id="confirmationLead">
+        Your place is confirmed. A digital admission pass has been generated and added to your experiences.
+      </p>
+    </div>
+
+    <!-- DIGITAL ADMISSION TICKET (Exact Stitch Pass Card Layout) -->
+    <div class="ticket-container bg-white rounded-3xl border border-[#E8E5DF] shadow-sm relative overflow-hidden mb-8">
+      
+      <!-- Upper Ticket Header -->
+      <div class="p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-gradient-to-r from-white via-white to-[#FAF9F6]">
+        <div class="flex items-center gap-4">
+          <img id="ticketThumb" src="" alt="Event" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-neutral-100" />
+          <div>
+            <span id="ticketCategory" class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded inline-block mb-1.5 bg-[#E9E2F8] text-[#795DA8]">
+              Technology
+            </span>
+            <h2 id="ticketEventTitle" class="text-xl sm:text-2xl font-bold text-[#202020] leading-snug">
+              Future Tech Summit 2026
+            </h2>
+            <p id="ticketPassType" class="text-xs text-[#6F6D68] mt-0.5 font-medium">Standard Admission Pass</p>
+          </div>
+        </div>
+
+        <div class="sm:text-right">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#DCE9DF] text-[#1D4427]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#4D7C5D]"></span>
+            Confirmed Seat
+          </span>
+          <p class="text-[11px] text-[#999791] mt-1 font-mono tracking-wider" id="ticketIdDisplay">EVT-8F42A1</p>
+        </div>
+      </div>
+
+      <!-- Perforated Tear-off Line with Realistic Notches -->
+      <div class="relative py-2 select-none">
+        <div class="ticket-notch-left"></div>
+        <div class="border-b-2 border-dashed border-[#E8E5DF] mx-6"></div>
+        <div class="ticket-notch-right"></div>
+      </div>
+
+      <!-- Ticket Core Details Grid -->
+      <div class="p-6 sm:p-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8 text-xs sm:text-sm">
+          <div>
+            <span class="text-xs font-bold text-[#999791] uppercase tracking-wider block mb-1">Attendee</span>
+            <span id="ticketAttendee" class="font-bold text-[#202020] text-sm sm:text-base">Aryan Sharma</span>
+          </div>
+
+          <div>
+            <span class="text-xs font-bold text-[#999791] uppercase tracking-wider block mb-1">Date</span>
+            <span id="ticketDate" class="font-bold text-[#202020] text-sm sm:text-base">Sep 25, 2026</span>
+          </div>
+
+          <div>
+            <span class="text-xs font-bold text-[#999791] uppercase tracking-wider block mb-1">Time</span>
+            <span id="ticketTime" class="font-bold text-[#202020] text-sm sm:text-base">9:00 AM IST</span>
+          </div>
+
+          <div class="col-span-2 sm:col-span-2">
+            <span class="text-xs font-bold text-[#999791] uppercase tracking-wider block mb-1">Venue</span>
+            <span id="ticketVenue" class="font-medium text-[#202020] leading-snug block">Jio World Centre, BKC, Mumbai</span>
+          </div>
+
+          <div>
+            <span class="text-xs font-bold text-[#999791] uppercase tracking-wider block mb-1">Admission</span>
+            <span id="ticketCountAmount" class="font-bold text-[#202020] text-sm sm:text-base">2 Tickets • ₹998</span>
+          </div>
+        </div>
+
+        <!-- QR Code & Security Stamp Frame -->
+        <div class="p-5 rounded-2xl bg-[#FAF9F6] border border-[#E8E5DF] flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div class="flex items-center gap-4">
+            <!-- Simulated QR Code visual with authentic anchor points -->
+            <div class="w-16 h-16 bg-white p-2 rounded-xl border border-[#E8E5DF] flex items-center justify-center flex-shrink-0 relative shadow-2xs">
+              <svg class="w-full h-full text-[#202020]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2 2h7v7H2V2zm2 2v3h3V4H4zm5 0h2v2H9V4zm4-2h7v7h-7V2zm2 2v3h3V4h-3zM2 13h7v7H2v-7zm2 2v3h3v-3H4zm7-2h2v2h-2v-2zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4-4h4v2h-4v-2zm0 4h2v2h-2v-2zm2 2h2v2h-2v-2zm-6 2h2v2h-2v-2zm8-2h1v2h-1v-2z"></path>
+              </svg>
+              <span class="w-2 h-2 rounded-full bg-[#D85A38] absolute center"></span>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-[#202020] block">Official Digital Pass</span>
+              <p class="text-xs text-[#6F6D68] leading-relaxed">Present this pass on your phone or printed for entry badge collection.</p>
+            </div>
+          </div>
+
+          <button 
+            id="printTicketBtn"
+            type="button" 
+            class="no-print whitespace-nowrap px-4 py-2.5 bg-white border border-[#E8E5DF] rounded-xl text-xs font-bold text-[#202020] hover:bg-[#F4F3F0] transition-colors flex items-center gap-2 shadow-2xs"
+          >
+            <svg class="w-4 h-4 text-[#6F6D68]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+            </svg>
+            <span>Print or Save Pass</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="no-print grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <a href="my-events.html" class="w-full py-3.5 bg-[#202020] text-white text-center rounded-2xl font-bold text-sm hover:bg-black transition-colors shadow-sm flex items-center justify-center gap-2">
+        <span>View in My Events</span>
+        <span>→</span>
+      </a>
+
+      <a href="events.html" class="w-full py-3.5 bg-white text-[#202020] text-center rounded-2xl font-semibold text-sm border border-[#E8E5DF] hover:border-[#202020] transition-colors flex items-center justify-center gap-2">
+        <span>Explore more events</span>
+      </a>
+    </div>
+
+    <!-- CALENDAR & SHARE ROW -->
+    <div class="no-print flex flex-wrap items-center justify-center gap-4 text-xs text-[#6F6D68] pt-2">
+      <a id="addToCalBtn" target="_blank" rel="noopener noreferrer" class="hover:text-[#202020] font-medium flex items-center gap-1.5 py-1 px-3 rounded-lg hover:bg-white transition-colors cursor-pointer">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span>Add to Google Calendar</span>
+      </a>
+
+      <span>•</span>
+
+      <button id="sharePassBtn" class="hover:text-[#202020] font-medium flex items-center gap-1.5 py-1 px-3 rounded-lg hover:bg-white transition-colors">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+        </svg>
+        <span>Share Pass Confirmation</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-auto border-t border-[#E8E5DF] bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-[#E8E5DF]">
+        <div class="md:col-span-2 space-y-3">
+          <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-[#202020]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#D85A38]"></span>
+            <span>eventora</span>
+          </a>
+          <p class="text-sm text-[#6F6D68] max-w-sm leading-relaxed">
+            Find and celebrate thoughtful cultural events, workshops, and gatherings happening around you.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Discover</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Featured Experiences</a></li>
+            <li><a href="events.html?cat=Design" class="hover:text-[#202020] transition-colors">Art &amp; Design Labs</a></li>
+            <li><a href="events.html?cat=Music" class="hover:text-[#202020] transition-colors">Music &amp; Acoustic</a></li>
+            <li><a href="events.html?cat=Workshops" class="hover:text-[#202020] transition-colors">Creative Workshops</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Platform</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Browse Categories</a></li>
+            <li><a href="my-events.html?tab=saved" class="hover:text-[#202020] transition-colors">My Saved Events</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Host an Event</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">About</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Our Philosophy</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Press &amp; Stories</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Contact Concierge</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6F6D68]">
+        <div>© 2026 Eventora Inc. All rights reserved. Built with contemporary Indian craft.</div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-[#202020]">Twitter (X)</a>
+          <a href="#" class="hover:text-[#202020]">Instagram</a>
+          <a href="#" class="hover:text-[#202020]">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Module Script -->
+  <script type="module">
+    import { getRegistrations, showToast, formatRupees, requireAuth } from './js/app.js';
+    import { EVENTS_DATA } from './js/data.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = requireAuth('my-events');
+      if (!user) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const regId = params.get('regId');
+      const eventId = params.get('id');
+
+      const allRegs = getRegistrations();
+      let record = null;
+
+      if (regId) {
+        record = allRegs.find(r => r.registrationId === regId);
+      }
+      if (!record && eventId) {
+        record = allRegs.find(r => r.eventId === eventId);
+      }
+      if (!record && allRegs.length > 0) {
+        record = allRegs[0];
+      }
+
+      // If no valid registration exists at all, redirect to events directory
+      if (!record) {
+        window.location.replace('events.html');
+        return;
+      }
+
+      // Populate elements
+      const confLead = document.getElementById('confirmationLead');
+      if (confLead) {
+        confLead.textContent = `Your place at ${record.title} is confirmed. A digital admission pass has been added to your experiences.`;
+      }
+
+      const thumb = document.getElementById('ticketThumb');
+      if (thumb) {
+        const evt = EVENTS_DATA.find(e => e.id === record.eventId);
+        thumb.src = record.image || (evt ? evt.image : '');
+        thumb.alt = record.title;
+      }
+
+      const catEl = document.getElementById('ticketCategory');
+      if (catEl) catEl.textContent = record.category || 'Technology';
+
+      const titleEl = document.getElementById('ticketEventTitle');
+      if (titleEl) titleEl.textContent = record.title;
+
+      const passTypeEl = document.getElementById('ticketPassType');
+      if (passTypeEl) passTypeEl.textContent = record.passType || 'Standard Admission Pass';
+
+      const regIdEl = document.getElementById('ticketIdDisplay');
+      if (regIdEl) regIdEl.textContent = record.registrationId;
+
+      const attendeeEl = document.getElementById('ticketAttendee');
+      if (attendeeEl) attendeeEl.textContent = record.fullName;
+
+      const dateEl = document.getElementById('ticketDate');
+      if (dateEl) dateEl.textContent = record.date;
+
+      const timeEl = document.getElementById('ticketTime');
+      if (timeEl) timeEl.textContent = record.time ? record.time.split('IST')[0].trim() : '9:00 AM';
+
+      const venueEl = document.getElementById('ticketVenue');
+      if (venueEl) venueEl.textContent = record.location;
+
+      const countAmtEl = document.getElementById('ticketCountAmount');
+      if (countAmtEl) {
+        countAmtEl.textContent = `${record.tickets || 1} Ticket${(record.tickets || 1) > 1 ? 's' : ''} • ${formatRupees(record.totalAmount || 0)}`;
+      }
+
+      // Print button
+      const printBtn = document.getElementById('printTicketBtn');
+      if (printBtn) {
+        printBtn.addEventListener('click', () => {
+          window.print();
+        });
+      }
+
+      // Calendar button with dynamic date
+      const calBtn = document.getElementById('addToCalBtn');
+      if (calBtn) {
+        let calDates = '20260925T033000Z/20260925T123000Z';
+        const match = (record.date || '').match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{1,2}),?\s+(\d{4})/i);
+        if (match) {
+          const monthMap = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
+          const mm = monthMap[match[1].toLowerCase()] || '09';
+          const dd = match[2].padStart(2, '0');
+          const yyyy = match[3];
+          calDates = `${yyyy}${mm}${dd}T040000Z/${yyyy}${mm}${dd}T120000Z`;
+        }
+        const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(record.title)}&dates=${calDates}&details=${encodeURIComponent('Registration ID: ' + record.registrationId + '\nTicket Pass: ' + record.passType)}&location=${encodeURIComponent(record.location)}`;
+        calBtn.href = calUrl;
+      }
+
+      // Share button
+      const shareBtn = document.getElementById('sharePassBtn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(window.location.href);
+            showToast('Pass link copied to clipboard!');
+          } else {
+            showToast('Share link ready!');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

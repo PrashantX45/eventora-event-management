@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Experiences — Eventora</title>
+  <meta name="description" content="Keep track of the events you've registered for on Eventora." />
+  <meta property="og:title" content="Your Experiences — Eventora" />
+  <meta property="og:description" content="Keep track of the events you've registered for." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-[#FAF9F6] text-[#202020] selection:bg-[#E9E2F8] selection:text-[#202020]">
+
+  <!-- Cultural background accent -->
+  <div class="absolute top-0 right-0 w-[550px] h-[550px] pointer-events-none z-0 overflow-hidden select-none opacity-25" aria-hidden="true">
+    <svg class="rangoli-drift w-full h-full" viewBox="0 0 500 500" fill="none">
+      <circle cx="360" cy="140" r="280" stroke="#F8DED2" stroke-width="1.5" stroke-dasharray="4 6"></circle>
+      <circle cx="360" cy="140" r="210" stroke="#E9E2F8" stroke-width="2"></circle>
+      <circle cx="360" cy="140" r="140" stroke="#DCE9DF" stroke-width="1.5"></circle>
+      <circle cx="360" cy="140" r="70" stroke="#F4E8B8" stroke-width="2"></circle>
+    </svg>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E8E5DF]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2.5 group text-[#202020] font-bold text-xl tracking-tight">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#D85A38] transition-transform group-hover:scale-125"></span>
+        <span class="tracking-tight text-xl font-extrabold text-[#202020]">eventora</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-[15px] font-medium text-[#6F6D68]">
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Explore</a>
+        <a href="events.html" class="hover:text-[#202020] transition-colors">Categories</a>
+        <a href="events.html#about" class="hover:text-[#202020] transition-colors">About</a>
+      </nav>
+
+      <div id="navbarUserArea" class="flex items-center space-x-5 text-[14px]">
+        <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 md:px-8 pt-10 pb-28 relative z-10">
+
+    <!-- PAGE TITLE SECTION -->
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-[#202020] tracking-tight mb-2">
+        Your experiences.
+      </h1>
+      <p class="text-[15px] sm:text-base text-[#6F6D68]">
+        Keep track of the events you've registered for.
+      </p>
+    </div>
+
+    <!-- TABS BAR -->
+    <div class="flex items-center gap-3 mb-10 pb-4 border-b border-[#E8E5DF] overflow-x-auto no-scrollbar">
+      
+      <!-- Upcoming tab -->
+      <button data-tab="upcoming" class="tab-btn px-5 py-2.5 rounded-full text-sm font-bold border border-[#202020] bg-[#202020] text-white shadow-xs flex items-center gap-2 transition-all">
+        <span>Upcoming</span>
+        <span id="countUpcoming" class="w-5 h-5 rounded-full bg-white/20 text-xs flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Past tab -->
+      <button data-tab="past" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-[#E8E5DF] bg-white text-[#6F6D68] hover:border-[#6F6D68] hover:text-[#202020] flex items-center gap-2 transition-all">
+        <span>Past</span>
+        <span id="countPast" class="w-5 h-5 rounded-full bg-[#FAF9F6] border border-[#E8E5DF] text-xs flex items-center justify-center text-[#6F6D68]">0</span>
+      </button>
+
+      <!-- Saved tab -->
+      <button data-tab="saved" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-[#E8E5DF] bg-white text-[#6F6D68] hover:border-[#6F6D68] hover:text-[#202020] flex items-center gap-2 transition-all">
+        <span>Saved</span>
+        <span id="countSaved" class="w-5 h-5 rounded-full bg-[#FAF9F6] border border-[#E8E5DF] text-xs flex items-center justify-center text-[#6F6D68]">0</span>
+      </button>
+
+    </div>
+
+    <!-- EVENTS LIST CONTAINER -->
+    <div id="eventsListContainer"></div>
+
+    <!-- EMPTY STATE (Exact Stitch Design from Image 11 with 16-fold rangoli mandala) -->
+    <div id="myEventsEmptyState" class="hidden text-center py-16 px-6 max-w-lg mx-auto bg-white rounded-3xl border border-[#E8E5DF] shadow-xs my-8">
+      
+      <!-- 16-Fold Contemporary Indian Rangoli Mandala Graphic -->
+      <div class="w-28 h-28 mx-auto mb-6 relative flex items-center justify-center select-none" aria-hidden="true">
+        <svg class="w-full h-full text-[#B85D3B]" viewBox="0 0 160 160" fill="none">
+          <circle cx="80" cy="80" r="70" stroke="#F8DED2" stroke-width="1.5" stroke-dasharray="3 4"></circle>
+          <circle cx="80" cy="80" r="54" stroke="#E9E2F8" stroke-width="1.5"></circle>
+          <circle cx="80" cy="80" r="38" stroke="#DCE9DF" stroke-width="1.5"></circle>
+          <!-- 16 symmetrical petals -->
+          <g stroke="#D85A38" stroke-width="1.2" opacity="0.75">
+            <path d="M80 20 C85 45 95 60 80 80 C65 60 75 45 80 20Z" fill="#F8DED2" fill-opacity="0.3"></path>
+            <path d="M80 140 C85 115 95 100 80 80 C65 100 75 115 80 140Z" fill="#F8DED2" fill-opacity="0.3"></path>
+            <path d="M20 80 C45 85 60 95 80 80 C60 65 45 75 20 80Z" fill="#F8DED2" fill-opacity="0.3"></path>
+            <path d="M140 80 C115 85 100 95 80 80 C100 65 115 75 140 80Z" fill="#F8DED2" fill-opacity="0.3"></path>
+            
+            <path d="M37 37 C60 55 70 70 80 80 C70 70 55 60 37 37Z" fill="#E9E2F8" fill-opacity="0.3"></path>
+            <path d="M123 123 C100 105 90 90 80 80 C90 90 105 100 123 123Z" fill="#E9E2F8" fill-opacity="0.3"></path>
+            <path d="M37 123 C55 100 70 90 80 80 C70 90 60 105 37 123Z" fill="#E9E2F8" fill-opacity="0.3"></path>
+            <path d="M123 37 C105 55 90 70 80 80 C90 70 100 55 123 37Z" fill="#E9E2F8" fill-opacity="0.3"></path>
+          </g>
+          <circle cx="80" cy="80" r="5" fill="#D85A38"></circle>
+        </svg>
+      </div>
+
+      <h3 class="text-2xl font-bold text-[#202020] mb-2 tracking-tight">Nothing planned yet.</h3>
+      <p class="text-sm text-[#6F6D68] leading-relaxed mb-6 max-w-sm mx-auto">
+        Discover an event and make it yours. Bookmark panels, concerts, and workshops for quick access.
+      </p>
+
+      <a href="events.html" class="inline-flex items-center gap-2 px-6 py-3.5 bg-[#202020] text-white rounded-full text-sm font-bold hover:bg-black transition-colors shadow-xs">
+        <span>Explore events</span>
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-auto border-t border-[#E8E5DF] bg-[#FAF9F6]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-[#E8E5DF]">
+        <div class="md:col-span-2 space-y-3">
+          <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-[#202020]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#D85A38]"></span>
+            <span>eventora</span>
+          </a>
+          <p class="text-sm text-[#6F6D68] max-w-sm leading-relaxed">
+            Find and celebrate thoughtful cultural events, workshops, and gatherings happening around you.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Discover</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Featured Experiences</a></li>
+            <li><a href="events.html?cat=Design" class="hover:text-[#202020] transition-colors">Art &amp; Design Labs</a></li>
+            <li><a href="events.html?cat=Music" class="hover:text-[#202020] transition-colors">Music &amp; Acoustic</a></li>
+            <li><a href="events.html?cat=Workshops" class="hover:text-[#202020] transition-colors">Creative Workshops</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">Platform</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Browse Categories</a></li>
+            <li><a href="my-events.html?tab=saved" class="hover:text-[#202020] transition-colors">My Saved Events</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Host an Event</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Community Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#202020] mb-4">About</h4>
+          <ul class="space-y-2.5 text-sm text-[#6F6D68]">
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Our Philosophy</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Press &amp; Stories</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Contact Concierge</a></li>
+            <li><a href="events.html" class="hover:text-[#202020] transition-colors">Privacy &amp; Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6F6D68]">
+        <div>© 2026 Eventora Inc. All rights reserved. Built with contemporary Indian craft.</div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-[#202020]">Twitter (X)</a>
+          <a href="#" class="hover:text-[#202020]">Instagram</a>
+          <a href="#" class="hover:text-[#202020]">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="./js/my-events.js"></script>
+
+</body>
+</html>
