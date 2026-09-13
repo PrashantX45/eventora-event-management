@@ -282,8 +282,8 @@ export function initNavbar() {
 
     userArea.innerHTML = `
       <!-- My Events Link (visible when logged in) -->
-      <a href="my-events.html" class="inline-flex items-center gap-1.5 text-[#6F6D68] hover:text-[#202020] transition-colors font-medium">
-        <span>My Events</span>
+      <a href="my-events.html" class="inline-flex items-center gap-1.5 text-[#6F6D68] hover:text-[#202020] transition-colors font-medium whitespace-nowrap shrink-0">
+        <span class="whitespace-nowrap inline-block">My Events</span>
       </a>
 
       <!-- Compact User Menu Pill -->
@@ -405,8 +405,8 @@ export function initNavbar() {
   } else {
     // Logged-out state: show Sign In button linking to signin.html
     userArea.innerHTML = `
-      <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block">
-        Sign In
+      <a href="signin.html" class="bg-[#202020] text-white px-5 py-2.5 rounded-full font-medium hover:bg-black transition-all shadow-sm text-center inline-block whitespace-nowrap shrink-0">
+        <span class="whitespace-nowrap inline-block">Sign In</span>
       </a>
     `;
   }

@@ -132,3 +132,29 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Ensure navbar user area top-level links and labels are strictly horizontal */
+#navbarUserArea {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+#navbarUserArea > a {
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+#navbarUserArea > a > span {
+  white-space: nowrap;
+  display: inline-block;
+  writing-mode: horizontal-tb;
+}
+
+/* User dropdown menu items remain vertically stacked */
+#userDropdown a {
+  display: flex !important;
+  width: 100%;
+}
+
