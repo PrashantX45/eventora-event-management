@@ -35,8 +35,12 @@ function renderEventDetails(evt) {
   // Hero section
   const heroImage = document.getElementById('heroImage');
   if (heroImage) {
-    heroImage.src = evt.image;
+    heroImage.src = evt.image || '/images/events/eventora-fallback.webp';
     heroImage.alt = evt.title;
+    heroImage.onerror = () => {
+      heroImage.onerror = null;
+      heroImage.src = '/images/events/eventora-fallback.webp';
+    };
   }
 
   const categoryBadge = document.getElementById('categoryBadge');
@@ -124,7 +128,7 @@ function renderEventDetails(evt) {
   if (speakersContainer && evt.speakers) {
     speakersContainer.innerHTML = evt.speakers.map(sp => `
       <div class="bg-white rounded-2xl border border-[#E8E5DF] p-4 flex items-center gap-4 shadow-xs">
-        <img src="${sp.image}" alt="${sp.name}" class="w-14 h-14 rounded-full object-cover border border-[#E8E5DF] flex-shrink-0" />
+        <img src="${sp.image || '/images/events/eventora-fallback.webp'}" alt="${sp.name}" class="w-14 h-14 rounded-full object-cover border border-[#E8E5DF] flex-shrink-0" onerror="this.onerror=null;this.src='/images/events/eventora-fallback.webp';" />
         <div>
           <h4 class="font-bold text-[#202020] text-sm">${sp.name}</h4>
           <p class="text-xs text-[#6F6D68]">${sp.role}</p>

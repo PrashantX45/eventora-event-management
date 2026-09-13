@@ -92,7 +92,7 @@
       <!-- Upper Ticket Header -->
       <div class="p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-gradient-to-r from-white via-white to-[#FAF9F6]">
         <div class="flex items-center gap-4">
-          <img id="ticketThumb" src="" alt="Event" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-neutral-100" />
+          <img id="ticketThumb" src="/images/events/eventora-fallback.webp" alt="Event" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-neutral-100" onerror="this.onerror=null;this.src='/images/events/eventora-fallback.webp';" />
           <div>
             <span id="ticketCategory" class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded inline-block mb-1.5 bg-[#E9E2F8] text-[#795DA8]">
               Technology
@@ -311,8 +311,13 @@
       const thumb = document.getElementById('ticketThumb');
       if (thumb) {
         const evt = EVENTS_DATA.find(e => e.id === record.eventId);
-        thumb.src = record.image || (evt ? evt.image : '');
+        const resolvedImage = (evt && evt.image) ? evt.image : (record.image && !record.image.includes('lh3.googleusercontent.com') ? record.image : '/images/events/eventora-fallback.webp');
+        thumb.src = resolvedImage;
         thumb.alt = record.title;
+        thumb.onerror = () => {
+          thumb.onerror = null;
+          thumb.src = '/images/events/eventora-fallback.webp';
+        };
       }
 
       const catEl = document.getElementById('ticketCategory');

@@ -28,8 +28,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 1499,
     seatsLeft: 128,
     seatsText: "Almost full • 128 seats left",
-    image: "https://lh3.googleusercontent.com/aida/AEtjO1UMLToh1N3tdDkMkjpQJyiKgdV1NJdzDJtzjpXlzxC6hYnwLKYoh6uXFYYS0InW_Wl7NeXN9SVJDg1JZVgbZPUCHwCj4y-PAVQlTPXP6HkH6l9O_qI0rqqVVhqVzLhGH2ZBNnUNhBR-S2jk5QIt3hFM88Y66cQCOlwacnPFgsj6dDmNGC0-oPKiyt13t13ILPHADoEeIAXdN1fvvfYxR3_lBHsI93nNyoYrw5mHiQT42bxJ9st8DBGNOg",
-    secondaryImage: "https://lh3.googleusercontent.com/aida/AEtjO1WQtkMWbSC2Mc4HzBvQB8N64RG_M4tpLbXH_RhCNyv4LSzXkGDJQYo5ZXjxMVllNqQDve5lz0JgBCdottY7qTkQQjjJRe_e4ozoq1Svi6yDBYp291q7bMrgZ9iWCztI0x4--MWspbtzdU5YdKmYRbbvAoHAbOKQ8qIx9Pp6hf2d6INKniiKd4VgXxjfTmnGWOOuRpsks9uWIv1hRbHVuBEXR3J20g9IK3tso0MhyWHaW8ryIdrlOVBGBC4",
+    image: "/images/events/future-tech-summit.webp",
+    secondaryImage: "/images/events/future-tech-summit-stage.webp",
     tagline: "A one-day gathering exploring artificial intelligence, emerging technology and the people building what comes next.",
     about: [
       "The Future Tech Summit 2026 is India's premier symposium exploring the vanguard of generative intelligence, decentralized infrastructure, and next-generation product engineering. Held at Mumbai's iconic Convention Centre, the conference convenes developers, system architects, startup founders, and technical researchers under one roof.",
@@ -56,25 +56,25 @@ export const EVENTS_DATA = [
         name: "Dr. Priya Ranganathan",
         role: "Principal AI Researcher",
         company: "DeepFoundry Labs",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UpNmpJLF4CCIlyWHuKAzz2DcaTXpMOa0nIH15OLZBb2D8V_sJHfqlF39J_44KwAFXHQ8BuHBQlwTnDGq4oDJqmoXpW3wM1_q6mkm8CM91XRNyDOcFXYVWHo2K-FebMssTc8Hjq0SQciqWE9uM7981sYfIsuKQc8IP_I7J5lnUWO8tLrmqfZk9kWg6zs-9uBS2y9NxxRBNakSCsom50nTBjgAs7HHZJJafXtHxa8qoMiAesBGSlhjXLXBg"
+        image: "/images/speakers/priya-ranganathan.webp"
       },
       {
         name: "Ananya Mehta",
         role: "VP Product",
         company: "Future Labs Inc.",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UOAeXmg-JtSt_mt-NRjFWBKG6Fr8nqU4FZKxMijDzwI6DanWnvglgRIgo8A0i0WpeOsjZrkxUVGgUdbukax3vM1PT93gGDRcs3VUGnfWbH9WUDSJsRxdQSbavhIdW1XZuGOlCJ8S-DXn1sbwMftRPRT1LXI5kFG2iTG9wWJYQTp_nzPeu2629Fom_0YydB0y1B56OucYycQTyfmde-7dNglLF-JJMNx2sy5CBk020CLKi40dUB4HK2rQ"
+        image: "/images/speakers/ananya-mehta.webp"
       },
       {
         name: "Rohan Desai",
         role: "Co-Founder & CTO",
         company: "NeuralStack Systems",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1VVL_JbpVJ5i2bDwSrgQszN-wR3UP9IIM1uqQUDicBMqjZwt7bOzbVlgCSrXV5jlNiFFdDId9Ta44JR4ztw276vxC0uMDMv-_9adlolQ7URJQwtzplyDPLT8uzfMdQSTmb0C4NbrtwlLB4DJ8_vUXNfrcMDtuVxDlVbY4gd0SFlRw0pID68F_pLX5HdBAij_YC6IkmY6GQ6-LcaC7CjhMybGBZ8FbdAE3q4yovXCLq-SXUkxvLQcxxTlYc"
+        image: "/images/speakers/rohan-desai.webp"
       },
       {
         name: "Vikram Sen",
         role: "Engineering Director",
         company: "Bharat Cloud Platform",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1U9srkGgxZ3FpCLrU-kEvm9ckuOSdNVgMcIEqExzwhbTsj247EIK4kiACTuCHg2GZx_jox9RT7R3ZGg9ELY-8NKQMbhv6Bh-CF3FiFhXIZcXwroFwRu7gX3zJHiWNSpd-9PslsbOd345F1cqeEoVAXZGslt8xGHR8YgCUHMN-axwb_WnXI_z99QFCHDHRQSTSP3NKRiKtEsQehuMYiJGxMVcM8ovRFAuwzkVDKeGADBTlfs5QPysIR7xTk"
+        image: "/images/speakers/vikram-sen.webp"
       }
     ],
     featured: true
@@ -103,8 +103,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 850,
     seatsLeft: 34,
     seatsText: "Limited seating • 34 seats left",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLD2WJaZG2Dljyls7FJVNXxQehJmpf2AJKZ8oV4Jqniz9mNYX-O1EFa-JvOvF6Uv9tVjNXz3MVRIOmOVVPLBnGAdnD1krDHDKUuomMft7i8BNQMncf6hZMG_Do34r-jk0Gc0Ddqd1de4l2J0aLOTFCtPrStM9ab67ICP6k8PTz2YBtOzMF1MMGI4Xrzd6jlMWSJUrKhOXODUfG__AiOceI0elwRVCbfgsKbpTUwNJwgopXp-BnX4vL",
-    secondaryImage: "https://lh3.googleusercontent.com/aida/AEtjO1ULmlNSVmKSBsicUAPhyHs3ibu6Q_zg6oTvB_0ATSrKF52oupQBYZZ26X3GfR9iFqbJiVIzbuHxfg0gTz-IAEUjz8yb2ywxgusbtn1_Ud-97fIZGntjlb8LnLDV283zwayNK3PpWvaX7zjGW1CxMyFH-vUTjn-22kxE9wv59UNN6LM80A9TulY7hxlYaEOQ5jj5G20e9agOlpdz-PMn8qtwGJd31WmcodaX_268RvJHWqOngjuA3A_NWQ",
+    image: "/images/events/intimate-acoustic-session.webp",
+    secondaryImage: "/images/events/intimate-acoustic-session-stage.webp",
     tagline: "An intimate acoustic showcase bringing independent singer-songwriters together for a night of soulful melodies and analog vinyl listening.",
     about: [
       "The Intimate Acoustic Session & Vinyl is an unplugged, high-fidelity live music experience dedicated to the purest sound reproduction. Set in the warm vaulted basement of Subterranean Music Hall, this night offers an antidote to loud arenas.",
@@ -128,13 +128,13 @@ export const EVENTS_DATA = [
         name: "Eliza Grace",
         role: "Singer-Songwriter",
         company: "Subterranean Collective",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UOAeXmg-JtSt_mt-NRjFWBKG6Fr8nqU4FZKxMijDzwI6DanWnvglgRIgo8A0i0WpeOsjZrkxUVGgUdbukax3vM1PT93gGDRcs3VUGnfWbH9WUDSJsRxdQSbavhIdW1XZuGOlCJ8S-DXn1sbwMftRPRT1LXI5kFG2iTG9wWJYQTp_nzPeu2629Fom_0YydB0y1B56OucYycQTyfmde-7dNglLF-JJMNx2sy5CBk020CLKi40dUB4HK2rQ"
+        image: "/images/speakers/eliza-grace.webp"
       },
       {
         name: "Prateek Bhaduri",
         role: "Multi-Instrumentalist",
         company: "Acoustic Sessions Studio",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1VVL_JbpVJ5i2bDwSrgQszN-wR3UP9IIM1uqQUDicBMqjZwt7bOzbVlgCSrXV5jlNiFFdDId9Ta44JR4ztw276vxC0uMDMv-_9adlolQ7URJQwtzplyDPLT8uzfMdQSTmb0C4NbrtwlLB4DJ8_vUXNfrcMDtuVxDlVbY4gd0SFlRw0pID68F_pLX5HdBAij_YC6IkmY6GQ6-LcaC7CjhMybGBZ8FbdAE3q4yovXCLq-SXUkxvLQcxxTlYc"
+        image: "/images/speakers/prateek-bhaduri.webp"
       }
     ],
     featured: true
@@ -163,8 +163,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 1250,
     seatsLeft: 26,
     seatsText: "Limited workshop • 26 spots remaining",
-    image: "https://lh3.googleusercontent.com/aida/AEtjO1U_Yi4c6wO9s_5LyqeXlVxptZMgWiFzNa41_4WtaGcijzLfrnTDZD5ZXndOTdtVvoSDBmWAWai1pXNDakhPXdyK56OpirtMcNTerct-VkY63iASYGoFbAmn4S0nZ-DBRYDbnSufq2Z0xVuic5Uo0kX5t0uaUpH38BoYlEiMr1ZnVVdacquoYnrSoq5StOopvGRFoe2P5H-LRX2g1-82Lzi_mZ3Fpw3UDWAPIoI9mo2Eg2M1MGI03O3KJJU",
-    secondaryImage: "https://lh3.googleusercontent.com/aida/AEtjO1VxftCs7GdoAvGhzH21eCSr6_Gv8JVg5mZwviLHZ8yZzUWKBBMf6wScGsCKnuHssB2VXwRfYKw7VtNwp6ttqgrFFTdsrIOucYK1OrWKOz_URNLbrM7u6_fjH5KSm9bjKSnh-sCh7FwLcVmjOMbTzr1ogXxEq9nvKDpRUyPnH9uqX9LHk9X5zTrhJfngzlAuhbA_j0QGpB7UVnokHs0egB4_y1sawFNokoRlqdnYsDq0S5OJXymahGoIwBc",
+    image: "/images/events/typography-layout-lab.webp",
+    secondaryImage: "/images/events/typography-layout-lab-workshop.webp",
     tagline: "Hands-on Swiss typography, mathematical grid systems, and modular layout engineering for modern designers.",
     about: [
       "The Typography & Layout Systems Lab is an intensive masterclass exploring the mathematical precision of the International Typographic Style adapted for contemporary digital and print systems.",
@@ -188,7 +188,7 @@ export const EVENTS_DATA = [
         name: "Arjun M.",
         role: "Design Principal",
         company: "Studio Obsidian",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1VVL_JbpVJ5i2bDwSrgQszN-wR3UP9IIM1uqQUDicBMqjZwt7bOzbVlgCSrXV5jlNiFFdDId9Ta44JR4ztw276vxC0uMDMv-_9adlolQ7URJQwtzplyDPLT8uzfMdQSTmb0C4NbrtwlLB4DJ8_vUXNfrcMDtuVxDlVbY4gd0SFlRw0pID68F_pLX5HdBAij_YC6IkmY6GQ6-LcaC7CjhMybGBZ8FbdAE3q4yovXCLq-SXUkxvLQcxxTlYc"
+        image: "/images/speakers/arjun-m.webp"
       }
     ],
     featured: true
@@ -217,8 +217,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 689,
     seatsLeft: 18,
     seatsText: "Limited walk • 18 spots left",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/events/urban-architecture-tour.webp",
+    secondaryImage: "/images/events/urban-architecture-tour-detail.webp",
     tagline: "A curated evening walking tour exploring Victorian Gothic, Art Deco, and Brutalist civic structures across Mumbai's historical core.",
     about: [
       "The Urban Architecture Archive Tour invites enthusiasts, architects, and urban observers into the stories etched into limestone, teak, and red basalt.",
@@ -242,7 +242,7 @@ export const EVENTS_DATA = [
         name: "Meenakshi Rathore",
         role: "Architectural Historian",
         company: "Preservation Trust",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UpNmpJLF4CCIlyWHuKAzz2DcaTXpMOa0nIH15OLZBb2D8V_sJHfqlF39J_44KwAFXHQ8BuHBQlwTnDGq4oDJqmoXpW3wM1_q6mkm8CM91XRNyDOcFXYVWHo2K-FebMssTc8Hjq0SQciqWE9uM7981sYfIsuKQc8IP_I7J5lnUWO8tLrmqfZk9kWg6zs-9uBS2y9NxxRBNakSCsom50nTBjgAs7HHZJJafXtHxa8qoMiAesBGSlhjXLXBg"
+        image: "/images/speakers/meenakshi-rathore.webp"
       }
     ],
     featured: false
@@ -271,8 +271,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 1550,
     seatsLeft: 14,
     seatsText: "Almost booked • 14 spots left",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/events/tactile-ceramics-workshop.webp",
+    secondaryImage: "/images/events/tactile-ceramics-studio.webp",
     tagline: "A hands-on mindful pottery workshop exploring wheel throwing, centering stoneware clay, and organic glazing techniques.",
     about: [
       "Tactile Ceramics & Wheel Throwing is a calming, sensory immersion into studio pottery inside the historic mill compound of Lower Parel.",
@@ -296,7 +296,7 @@ export const EVENTS_DATA = [
         name: "Shalini Rao",
         role: "Studio Founder & Master Ceramist",
         company: "Clayworks Atelier",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UOAeXmg-JtSt_mt-NRjFWBKG6Fr8nqU4FZKxMijDzwI6DanWnvglgRIgo8A0i0WpeOsjZrkxUVGgUdbukax3vM1PT93gGDRcs3VUGnfWbH9WUDSJsRxdQSbavhIdW1XZuGOlCJ8S-DXn1sbwMftRPRT1LXI5kFG2iTG9wWJYQTp_nzPeu2629Fom_0YydB0y1B56OucYycQTyfmde-7dNglLF-JJMNx2sy5CBk020CLKi40dUB4HK2rQ"
+        image: "/images/speakers/shalini-rao.webp"
       }
     ],
     featured: false
@@ -325,8 +325,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 499,
     seatsLeft: 85,
     seatsText: "RSVP Open • 85 spots left",
-    image: "https://images.unsplash.com/photo-1577720643272-265f09367456?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1577720643272-265f09367456?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/events/photo-forum-exhibition.webp",
+    secondaryImage: "/images/events/photo-forum-gallery.webp",
     tagline: "An evening gallery vernissage showcasing documentary, street, and analog photography from 20 emerging South Asian photographers.",
     about: [
       "The Independent Photo Forum Exhibition marks the opening night of our autumn showcase in the heart of Kala Ghoda.",
@@ -350,7 +350,7 @@ export const EVENTS_DATA = [
         name: "Kabir Varma",
         role: "Lead Curator",
         company: "Whitebox Photo Forum",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UpNmpJLF4CCIlyWHuKAzz2DcaTXpMOa0nIH15OLZBb2D8V_sJHfqlF39J_44KwAFXHQ8BuHBQlwTnDGq4oDJqmoXpW3wM1_q6mkm8CM91XRNyDOcFXYVWHo2K-FebMssTc8Hjq0SQciqWE9uM7981sYfIsuKQc8IP_I7J5lnUWO8tLrmqfZk9kWg6zs-9uBS2y9NxxRBNakSCsom50nTBjgAs7HHZJJafXtHxa8qoMiAesBGSlhjXLXBg"
+        image: "/images/speakers/kabir-varma.webp"
       }
     ],
     featured: false
@@ -377,8 +377,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 799,
     seatsLeft: 95,
     seatsText: "95 passes available",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIvJysvkemBWqD2d9d8vai-3N3fuJyBfs-gSPmsYeRx16xCDAIZAsBlHO7ZpUutoYvqa_JobD3pzbjiT9BYpugPP9MaNYGl1JEnTtlc9v6rM5RMQQl62qbWE6j8Bl6M_xIMTmMbiovgzaIiPjeu1GB_OFIfhbVT8nqXc0LqCx662_RxDGHKc1kTZPeVo2PwOzlCPNX_UjjFyG_RJpg1UPNkXGcUMzD0EaJfjKkpFMp6IFcSevaYKW-",
-    secondaryImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIvJysvkemBWqD2d9d8vai-3N3fuJyBfs-gSPmsYeRx16xCDAIZAsBlHO7ZpUutoYvqa_JobD3pzbjiT9BYpugPP9MaNYGl1JEnTtlc9v6rM5RMQQl62qbWE6j8Bl6M_xIMTmMbiovgzaIiPjeu1GB_OFIfhbVT8nqXc0LqCx662_RxDGHKc1kTZPeVo2PwOzlCPNX_UjjFyG_RJpg1UPNkXGcUMzD0EaJfjKkpFMp6IFcSevaYKW-",
+    image: "/images/events/jaipur-arts-weekend.webp",
+    secondaryImage: "/images/events/jaipur-arts-weekend-palace.webp",
     tagline: "Celebrating craft, block printing, architectural photography, and experimental theater in the Pink City.",
     about: [
       "Jaipur Arts Weekend occupies Charles Correa's iconic red sandstone pavilions at Jawahar Kala Kendra for three days of contemporary visual art, heritage handcraft preservation, and experimental sound.",
@@ -402,7 +402,7 @@ export const EVENTS_DATA = [
         name: "Meenakshi Rathore",
         role: "Curatorial Director",
         company: "Jaipur Heritage Arts",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UpNmpJLF4CCIlyWHuKAzz2DcaTXpMOa0nIH15OLZBb2D8V_sJHfqlF39J_44KwAFXHQ8BuHBQlwTnDGq4oDJqmoXpW3wM1_q6mkm8CM91XRNyDOcFXYVWHo2K-FebMssTc8Hjq0SQciqWE9uM7981sYfIsuKQc8IP_I7J5lnUWO8tLrmqfZk9kWg6zs-9uBS2y9NxxRBNakSCsom50nTBjgAs7HHZJJafXtHxa8qoMiAesBGSlhjXLXBg"
+        image: "/images/speakers/meenakshi-rathore.webp"
       }
     ],
     featured: false
@@ -429,8 +429,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 1299,
     seatsLeft: 22,
     seatsText: "Small batch • 22 seats remaining",
-    image: "https://lh3.googleusercontent.com/aida/AEtjO1UXN2z6WyOpmyqOTI9bBfgVA_nyWu8Kh-iw1uKtrfS-L--i-XHBYhRisDz0RhoTgkgiSEOrs0GguY7CWyZLHRasJXPkbln-Hsq8kpWl4MebR7gzA70EJYSvApdrmCXsKa-7Qn7-e3YgVm1bTWn9SgVPZRkK7y-WOWGEpNOXRXqftAX9sMWbebW93xv1Ee9ODFpsBcdi_e5fbHLHfywCpgsd4_gi1RDoyfLK22p70j5tV4FFeJSF87Lr1B4",
-    secondaryImage: "https://lh3.googleusercontent.com/aida/AEtjO1UXN2z6WyOpmyqOTI9bBfgVA_nyWu8Kh-iw1uKtrfS-L--i-XHBYhRisDz0RhoTgkgiSEOrs0GguY7CWyZLHRasJXPkbln-Hsq8kpWl4MebR7gzA70EJYSvApdrmCXsKa-7Qn7-e3YgVm1bTWn9SgVPZRkK7y-WOWGEpNOXRXqftAX9sMWbebW93xv1Ee9ODFpsBcdi_e5fbHLHfywCpgsd4_gi1RDoyfLK22p70j5tV4FFeJSF87Lr1B4",
+    image: "/images/events/creative-coding-workshop.webp",
+    secondaryImage: "/images/events/creative-coding-workspace.webp",
     tagline: "Hands-on generative art, shader programming, and algorithmic patterns for frontend developers and digital artists.",
     about: [
       "The Creative Coding Workshop Pune is an intensive 5-hour interactive lab designed for engineers who want to make code visually compelling. Moving beyond standard web UI frameworks, we dive into WebGL, Three.js, GLSL shaders, and procedural physics.",
@@ -454,7 +454,7 @@ export const EVENTS_DATA = [
         name: "Rohan Desai",
         role: "Co-Founder & CTO",
         company: "NeuralStack Systems",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1VVL_JbpVJ5i2bDwSrgQszN-wR3UP9IIM1uqQUDicBMqjZwt7bOzbVlgCSrXV5jlNiFFdDId9Ta44JR4ztw276vxC0uMDMv-_9adlolQ7URJQwtzplyDPLT8uzfMdQSTmb0C4NbrtwlLB4DJ8_vUXNfrcMDtuVxDlVbY4gd0SFlRw0pID68F_pLX5HdBAij_YC6IkmY6GQ6-LcaC7CjhMybGBZ8FbdAE3q4yovXCLq-SXUkxvLQcxxTlYc"
+        image: "/images/speakers/rohan-desai.webp"
       }
     ],
     featured: false
@@ -481,8 +481,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 850,
     seatsLeft: 450,
     seatsText: "Registration closing soon",
-    image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/events/marine-drive-run.webp",
+    secondaryImage: "/images/events/marine-drive-run-coastal.webp",
     tagline: "Experience the brisk sunrise breeze along Mumbai's Queen's Necklace with 1,500 enthusiastic runners.",
     about: [
       "The Marine Drive Coastal Run is Mumbai's premier timed sunrise run, offering certified 10K and 5K courses along the iconic Arabian Sea coastline.",
@@ -506,7 +506,7 @@ export const EVENTS_DATA = [
         name: "Tanvi Shekhawat",
         role: "Race Director & Triathlete",
         company: "Mumbai Running Co.",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UOAeXmg-JtSt_mt-NRjFWBKG6Fr8nqU4FZKxMijDzwI6DanWnvglgRIgo8A0i0WpeOsjZrkxUVGgUdbukax3vM1PT93gGDRcs3VUGnfWbH9WUDSJsRxdQSbavhIdW1XZuGOlCJ8S-DXn1sbwMftRPRT1LXI5kFG2iTG9wWJYQTp_nzPeu2629Fom_0YydB0y1B56OucYycQTyfmde-7dNglLF-JJMNx2sy5CBk020CLKi40dUB4HK2rQ"
+        image: "/images/speakers/tanvi-shekhawat.webp"
       }
     ],
     featured: false
@@ -533,8 +533,8 @@ export const EVENTS_DATA = [
     tierVipPrice: 1150,
     seatsLeft: 60,
     seatsText: "60 passes remaining",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
-    secondaryImage: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/events/product-leaders-forum.webp",
+    secondaryImage: "/images/events/product-leaders-discussion.webp",
     tagline: "Uncensored discussions on product strategy, retention loops, and team dynamics among senior tech leaders.",
     about: [
       "Product Leaders Forum brings together VP Products, Group PMs, and Senior Engineering Leads for frank Chatham House Rule discussions on navigating growth in challenging markets.",
@@ -558,7 +558,7 @@ export const EVENTS_DATA = [
         name: "Ananya Mehta",
         role: "VP Product",
         company: "Future Labs Inc.",
-        image: "https://lh3.googleusercontent.com/aida/AEtjO1UOAeXmg-JtSt_mt-NRjFWBKG6Fr8nqU4FZKxMijDzwI6DanWnvglgRIgo8A0i0WpeOsjZrkxUVGgUdbukax3vM1PT93gGDRcs3VUGnfWbH9WUDSJsRxdQSbavhIdW1XZuGOlCJ8S-DXn1sbwMftRPRT1LXI5kFG2iTG9wWJYQTp_nzPeu2629Fom_0YydB0y1B56OucYycQTyfmde-7dNglLF-JJMNx2sy5CBk020CLKi40dUB4HK2rQ"
+        image: "/images/speakers/ananya-mehta.webp"
       }
     ],
     featured: false

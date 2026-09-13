@@ -52,7 +52,13 @@ function renderEventContext(evt) {
 
   // Event Card in Form
   const regEventImage = document.getElementById('regEventImage');
-  if (regEventImage) regEventImage.src = evt.image;
+  if (regEventImage) {
+    regEventImage.src = evt.image || '/images/events/eventora-fallback.webp';
+    regEventImage.onerror = () => {
+      regEventImage.onerror = null;
+      regEventImage.src = '/images/events/eventora-fallback.webp';
+    };
+  }
 
   const regEventTitle = document.getElementById('regEventTitle');
   if (regEventTitle) regEventTitle.textContent = evt.title;

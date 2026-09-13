@@ -112,7 +112,7 @@ function renderUpcoming(container, emptyState) {
     <div class="space-y-6">
       ${upcomingRegs.map(reg => {
         const matchingEvt = EVENTS_DATA.find(e => e.id === reg.eventId);
-        const image = reg.image || (matchingEvt ? matchingEvt.image : 'https://lh3.googleusercontent.com/aida/AEtjO1UMLToh1N3tdDkMkjpQJyiKgdV1NJdzDJtzjpXlzxC6hYnwLKYoh6uXFYYS0InW_Wl7NeXN9SVJDg1JZVgbZPUCHwCj4y-PAVQlTPXP6HkH6l9O_qI0rqqVVhqVzLhGH2ZBNnUNhBR-S2jk5QIt3hFM88Y66cQCOlwacnPFgsj6dDmNGC0-oPKiyt13t13ILPHADoEeIAXdN1fvvfYxR3_lBHsI93nNyoYrw5mHiQT42bxJ9st8DBGNOg');
+        const image = (matchingEvt && matchingEvt.image) ? matchingEvt.image : (reg.image && !reg.image.includes('lh3.googleusercontent.com') ? reg.image : '/images/events/eventora-fallback.webp');
         const category = reg.category || (matchingEvt ? matchingEvt.category : 'General');
         
         return `
@@ -121,7 +121,7 @@ function renderUpcoming(container, emptyState) {
               
               <!-- Left: Image & Main Info -->
               <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 flex-1">
-                <img src="${image}" alt="${escapeHtml(reg.title)}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-[#F4F3F0]" />
+                <img src="${image}" alt="${escapeHtml(reg.title)}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#E8E5DF] flex-shrink-0 bg-[#F4F3F0]" onerror="this.onerror=null;this.src='/images/events/eventora-fallback.webp';" />
                 
                 <div>
                   <div class="flex items-center gap-2 mb-2">
@@ -202,7 +202,7 @@ function renderPast(container, emptyState) {
     <div class="space-y-6">
       ${pastRegs.map(past => {
         const matchingEvt = EVENTS_DATA.find(e => e.id === past.eventId);
-        const image = past.image || (matchingEvt ? matchingEvt.image : 'https://lh3.googleusercontent.com/aida/AEtjO1UMLToh1N3tdDkMkjpQJyiKgdV1NJdzDJtzjpXlzxC6hYnwLKYoh6uXFYYS0InW_Wl7NeXN9SVJDg1JZVgbZPUCHwCj4y-PAVQlTPXP6HkH6l9O_qI0rqqVVhqVzLhGH2ZBNnUNhBR-S2jk5QIt3hFM88Y66cQCOlwacnPFgsj6dDmNGC0-oPKiyt13t13ILPHADoEeIAXdN1fvvfYxR3_lBHsI93nNyoYrw5mHiQT42bxJ9st8DBGNOg');
+        const image = (matchingEvt && matchingEvt.image) ? matchingEvt.image : (past.image && !past.image.includes('lh3.googleusercontent.com') ? past.image : '/images/events/eventora-fallback.webp');
         const category = past.category || (matchingEvt ? matchingEvt.category : 'Cultural');
 
         return `
@@ -210,7 +210,7 @@ function renderPast(container, emptyState) {
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               
               <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 flex-1">
-                <img src="${image}" alt="${escapeHtml(past.title)}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#E8E5DF] grayscale flex-shrink-0" />
+                <img src="${image}" alt="${escapeHtml(past.title)}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border border-[#E8E5DF] grayscale flex-shrink-0" onerror="this.onerror=null;this.src='/images/events/eventora-fallback.webp';" />
                 <div>
                   <div class="flex items-center gap-2 mb-2">
                     <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FAF9F6] border border-[#E8E5DF] text-[#6F6D68]">

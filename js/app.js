@@ -298,7 +298,7 @@ export function renderEventCard(evt, options = {}) {
     <article class="event-card group cursor-pointer flex flex-col transition-all duration-300 hover:-translate-y-1" onclick="window.location.href='${link}'">
       <!-- Poster Image -->
       <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#F4F3F0] mb-3.5">
-        <img src="${evt.image}" alt="${escapeHtml(evt.title)}" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500 ease-out" loading="lazy">
+        <img src="${evt.image || '/images/events/eventora-fallback.webp'}" alt="${escapeHtml(evt.title)}" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500 ease-out" loading="lazy" onerror="this.onerror=null;this.src='/images/events/eventora-fallback.webp';">
       </div>
 
       <!-- Date Badge & Price Row -->
